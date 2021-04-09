@@ -14,7 +14,10 @@
   <body>
     <div class="background">
       <div class="background__header"></div>
-      <div class="background__main"></div>
+      <div class="background__content">
+        <div class="background__content-left"></div>
+        <div class="background__content-right"></div>
+      </div>
     </div>
     <header>
       <div class="header__foreground">
@@ -30,7 +33,13 @@
     <main>
       <article class="page">
         <markdown>
-          <include src="about.markdown"></include>
+          <include src="what_is_isoratas.markdown"></include>
+        </markdown>
+      </article>
+
+      <article class="page">
+        <markdown>
+          <include src="why_isoratas.markdown"></include>
         </markdown>
       </article>
     </main>

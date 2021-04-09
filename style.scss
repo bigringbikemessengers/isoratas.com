@@ -42,8 +42,38 @@ header {
   background-position: bottom 10% right;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   filter: brightness(125%) blur(2px);
   opacity: 0.6;
+}
+
+.background__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.background__content-left {
+  $image-url: url('./images/content_background_left.jpeg');
+  height: 100%;
+  width: 100%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;  
+  background-image: $image-url;
+  background-attachment: fixed;
+}
+
+.background__content-right {
+  $image-url: url('./images/content_background_right.jpeg');
+  height: 100%;
+  width: 100%;
+  background-position: right -250px bottom;
+  background-repeat: no-repeat;
+  background-size: contain;  
+  background-image: $image-url;
+  background-attachment: fixed;
 }
 
 .background__main {
@@ -123,7 +153,7 @@ main {
 
 @mixin content-column {
   box-sizing: border-box;
-  max-width: 60rem;
+  max-width: 50rem;
   padding: 0.5rem 1rem;
   @media (min-width: 480px) {
     padding: 1rem 2.5rem;
@@ -131,12 +161,13 @@ main {
   }
   @media (min-width: 1440px) {
     padding: 2rem 5rem;
-    margin-left: 10%;
+    margin-left: 20%;
   }
 }
 
 .page {
   @include content-column;
+  margin-bottom: 5em;
   box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);
   background-color: white;
   opacity: 1;
