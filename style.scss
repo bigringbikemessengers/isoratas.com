@@ -30,21 +30,6 @@ header, .header__background {
   opacity: 0.75;
 }
 
-.__header__foreground {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  filter: none;
-  display: block;
-  height: 100%;
-  width: 75%;
-  $image-url: url('./images/header_foreground.png');
-  background-image: $image-url;
-  background-position: bottom 10% left 10%;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .header__foreground {
   position: absolute;
   width: 75%;
