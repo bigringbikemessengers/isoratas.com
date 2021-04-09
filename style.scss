@@ -92,7 +92,7 @@ header {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: stretch;
-  .header__logo, .header__text {
+  .header__logo, .header__banner {
     max-height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@ header {
     background-image: $image-url;
   }
 
-  .header__text {
+  .header__banner {
     flex: 2 1 0;
     min-width: 250px;
     min-height: 40%;
