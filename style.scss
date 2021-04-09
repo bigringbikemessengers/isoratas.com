@@ -48,14 +48,14 @@ header, .header__background {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: stretch;
-  .header__foreground-logo, .header__foreground-text {
+  .header__logo, .header__text {
     max-height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left top;
   }
 
-  .header__foreground-logo {
+  .header__logo {
     flex: 1 1 0;
     min-width: 150px;
     min-height: 50%;
@@ -63,10 +63,10 @@ header, .header__background {
     background-image: $image-url;
   }
 
-  .header__foreground-text {
+  .header__text {
     flex: 2 1 0;
     min-width: 250px;
-    min-height: 50%;    
+    min-height: 50%;
     $image-url: url('./images/header_foreground_text.png');
     background-image: $image-url;
   }
