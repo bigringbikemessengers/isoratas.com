@@ -7,19 +7,29 @@ html {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-header {
+body {
   position: relative;
 }
 
-header, .header__background {
+header {
   width: 100%;
-  height: min(50vh, 1000px);
-  padding-bottom: min(50vw, 1000px);
-  box-sizing: border-box;
+  height: min(47.5vh, 950px);
+  max-height: min(47.5vw, 950px);
 }
 
+.background {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
 
-.header__background {
+.background__header {
+  min-height: min(50vw, 1000px);
+  max-height: min(50vh, 1500px);
+  box-sizing: border-box;
   $gradient: linear-gradient(
     -45deg,
     rgba(0,0,0,0) 0%,
@@ -28,8 +38,7 @@ header, .header__background {
     rgba(0,0,0,0.75) 100%
   );
   $image-url: url('./images/header_background.jpeg');
-  background-image: $gradient,
-                    $image-url;
+  background-image: $gradient, $image-url;
   background-position: bottom 10% right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,12 +46,21 @@ header, .header__background {
   opacity: 0.6;
 }
 
+.background__main {
+  position: relative;
+  top: -1px;
+  z-index: -3;
+  background-color: $color-primary;
+  height: 100%;
+  width: 100%;
+}
+
 .header__foreground {
-  position: absolute;
-  width: 75%;
-  height: 90%;
-  top: 5%;
-  left: 5%;
+  box-sizing: border-box;
+  padding-right: 25%;
+  padding-top: 5%;
+  padding-left: 5%;
+  height: 95%;
   display: flex;
   column-gap: 5%;
   flex-flow: row wrap;
@@ -97,9 +115,17 @@ body {
 main {
   flex: 1 1 auto;
   width: 100%;
-  background-color: $color-primary;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  z-index: -1;
-  margin-top: -1px;
+  z-index: 1;
+}
+
+.page {
+  background: white;
+  opacity: 1;
+  width: 60%;
+  padding-top: -5%;
+  margin-left: 10%;
+  height: 100%;
 }
