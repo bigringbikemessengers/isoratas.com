@@ -11,12 +11,6 @@ body {
   position: relative;
 }
 
-header {
-  font-family: 'Roboto Condensed', sans-serif;
-  width: 100%;
-  height: min(300px, max(100vw, 47.5vh));
-}
-
 .background {
   z-index: -1;
   position: absolute;
@@ -85,12 +79,14 @@ header {
   width: 100%;
 }
 
-.header__foreground {
+header {
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  height: min(300px, max(100vw, 47.5vh));  
   box-sizing: border-box;
   padding-right: 25%;
   padding-top: 5%;
   padding-left: 5%;
-  height: 95%;
   display: flex;
   column-gap: 5%;
   flex-flow: row wrap;
@@ -112,7 +108,7 @@ header {
     flex: 1 1 0;
     min-width: 50px;
     min-height: 50px;
-    $image-url: url('./images/header_foreground_logo.png');
+    $image-url: url('./images/header_logo.png');
     background-image: $image-url;
   }
 
@@ -120,7 +116,7 @@ header {
     flex: 2 1 0;
     min-width: 250px;
     min-height: 40%;
-    $image-url: url('./images/header_foreground_text.png');
+    $image-url: url('./images/header_banner.png');
     background-image: $image-url;
   }
 
