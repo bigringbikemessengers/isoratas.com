@@ -1,4 +1,4 @@
-body, html { height: 100%; width: 100%; margin: 0; min-width: 300px }
+body, html { width: 100%; margin: 0; min-width: 300px }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
@@ -13,8 +13,9 @@ body {
 
 header {
   width: 100%;
-  height: min(47.5vh, 950px);
-  max-height: min(47.5vw, 950px);
+  height: 47.5vh;
+  max-height: 47.5vw;
+  min-height: 47.5vh;
 }
 
 .background {
@@ -27,8 +28,8 @@ header {
 }
 
 .background__header {
-  min-height: min(50vw, 1000px);
-  max-height: min(50vh, 1500px);
+  min-height: 100vmin;
+  max-height: min(33vmax, 1500px);
   box-sizing: border-box;
   $gradient: linear-gradient(
     -45deg,
@@ -124,8 +125,12 @@ main {
 .page {
   background: white;
   opacity: 1;
-  width: 60%;
-  padding-top: -5%;
-  margin-left: 10%;
-  height: 100%;
+  width: 100%;
+  @media (min-width: 480px) {
+    width: 70%;
+  }
+  @media (min-width: 1024px) {
+    margin-left: 10%;
+  }
+  height: 2000px;
 }
