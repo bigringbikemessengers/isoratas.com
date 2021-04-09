@@ -1,4 +1,4 @@
-body, html { height: 100%; width: 100%; margin: 0 }
+body, html { height: 100%; width: 100%; margin: 0; min-width: 300px }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
@@ -33,8 +33,8 @@ header, .header__background {
   background-position: bottom 10% right;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: brightness(125%) blur(1px);
-  opacity: 0.75;
+  filter: brightness(125%) blur(2px);
+  opacity: 0.6;
 }
 
 .header__foreground {
@@ -57,8 +57,8 @@ header, .header__background {
 
   .header__logo {
     flex: 1 1 0;
-    min-width: 150px;
-    min-height: 50%;
+    min-width: 50px;
+    min-height: 50px;
     $image-url: url('./images/header_foreground_logo.png');
     background-image: $image-url;
   }
@@ -66,9 +66,20 @@ header, .header__background {
   .header__text {
     flex: 2 1 0;
     min-width: 250px;
-    min-height: 50%;
+    min-height: 40%;
     $image-url: url('./images/header_foreground_text.png');
     background-image: $image-url;
+  }
+
+  .header__motto {
+    margin-top: 0.5rem;
+    margin-left: min(1em, 1vw);
+    font-size: 3rem;
+    font-size: min(8vmin, 3rem);
+    font-weight: bold;
+    font-style: italic;
+    color: $color-primary;
+    width: 30ch;
   }
 }
 
