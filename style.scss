@@ -13,8 +13,8 @@ header {
 
 header, .header__background {
   width: 100%;
-  height: min(700px, 50vh);
-  padding-bottom: min(50vw, 700px);
+  height: min(50vh, 1000px);
+  padding-bottom: min(50vw, 1000px);
   box-sizing: border-box;
 }
 
@@ -80,7 +80,7 @@ header, .header__background {
     margin-top: 0.5rem;
     margin-left: min(1em, 1vw);
     font-size: 3rem;
-    font-size: min(8vmin, 3rem);
+    font-size: min(6vmin, 2.5rem);
     font-weight: bold;
     font-style: italic;
     color: $color-primary;
