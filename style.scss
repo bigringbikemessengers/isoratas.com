@@ -149,13 +149,34 @@ main {
 footer {
   background-color: white;
   @include content-column;
-  padding: 1rem 2.5rem;
   text-align: center;
   margin-top: 1rem;
-  font-weight: 500;
+  padding: 0 !important;
+
   color: $color-primary;
   a {
     text-decoration: none;
     color: $color-primary;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.5;;
+  }
+  .datum {
+    display: block;
+    &:before {
+      content: '⚙';
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      font-size: 1rem;
+    }
+    &:after {
+      content: '⚙';
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      font-size: 1rem;
+    }
+
   }
 }
