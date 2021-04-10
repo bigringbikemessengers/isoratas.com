@@ -54,7 +54,7 @@ body {
   width: 100%;
   background-position: left bottom;
   background-repeat: no-repeat;
-  background-size: contain;  
+  background-size: contain;
   background-image: $image-url;
   background-attachment: fixed;
 }
@@ -65,7 +65,7 @@ body {
   width: 100%;
   background-position: right -250px bottom;
   background-repeat: no-repeat;
-  background-size: contain;  
+  background-size: contain;
   background-image: $image-url;
   background-attachment: fixed;
 }
@@ -81,54 +81,75 @@ body {
 
 header {
   font-family: 'Roboto Condensed', sans-serif;
-  width: 100%;
-  height: min(300px, max(100vw, 47.5vh));  
   box-sizing: border-box;
-  padding-right: 25%;
-  padding-top: 5%;
-  padding-left: 5%;
+  margin: 1.5rem;
+  max-width: min(100rem, 75vw);
+  gap: 1rem;
   display: flex;
-  column-gap: 5%;
   flex-flow: row wrap;
-  justify-content: flex-start;
   align-items: stretch;
-  .header__logo, .header__banner {
-    max-height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left top;
+  justify-content: flex-start;
+  .header__banner {
+    font-size: 5rem;
+    font-weight: bolder;
+    font-style: italic;
+    color: $color-primary;
   }
+  $header-row-min-height: 10rem;
+  $header-row-max-height: 20rem;
 
-  .header__logo { display: none }
-  @media (min-width: 480px) {
-    .header__logo { display: initial }
+  $logo-aspect-ratio: 140 / 188;
+  $banner-aspect-ratio: 383 / 160;
+
+  $logo-min-width: $logo-aspect-ratio * $header-row-min-height;
+  $logo-max-width: $logo-aspect-ratio * $header-row-max-height;
+
+  $banner-min-width: $banner-aspect-ratio * $header-row-min-height;
+  $banner-max-width: $banner-aspect-ratio * $header-row-max-height;
+
+  .header__logo, .header__banner {
+    max-height: $header-row-max-height;
+    min-height: $header-row-min-height;
+    & * {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   .header__logo {
-    flex: 1 1 0;
-    min-width: 50px;
-    min-height: 50px;
-    $image-url: url('./images/header_logo.png');
-    background-image: $image-url;
+    flex: 1 1 $logo-min-width;
+    min-width: $logo-min-width;
+    max-width: $logo-max-width;
+    @media (max-width: ($logo-min-width + $banner-min-width + 1rem) / 0.75) {
+      display: none;
+    }
   }
 
   .header__banner {
-    flex: 2 1 0;
-    min-width: 250px;
-    min-height: 40%;
-    $image-url: url('./images/header_banner.png');
-    background-image: $image-url;
+    flex: 3 1 $banner-min-width;
+    min-width: $banner-min-width;
+    max-width: $banner-max-width;
+    padding-left: 0;
   }
 
   .header__motto {
-    margin-top: 0.5rem;
-    margin-left: min(1em, 1vw);
-    font-size: 3rem;
-    font-size: min(8vmin, 2.5rem);
-    font-weight: 500;
-    font-style: italic;
+    max-height: $header-row-max-height;
+    flex: 1 1 auto;
+    margin-right: auto;
+    max-width: 27.5ch;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .header__motto {
+    text-align: left;
+    vertical-align: middle;
     color: $color-primary;
-    width: 30ch;
+    font-size: 3rem;
+    font-size: clamp(2rem, 5vmax, 4rem);
+    font-weight: 500;
+    line-height: 1;
+    font-style: italic;
   }
 }
 
