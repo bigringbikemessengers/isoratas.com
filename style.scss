@@ -1,4 +1,4 @@
-body, html { width: 100%; margin: 0; min-width: 300px }
+body, html { width: 100%; margin: 0; }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
@@ -122,7 +122,6 @@ header {
 
   .header__logo {
     flex: 1 1 $logo-min-width;
-    min-width: $logo-min-width;
     max-width: $logo-max-width;
     @media (max-width: ($logo-min-width + $banner-min-width + 1rem) / 0.80) {
       display: none;
@@ -131,7 +130,6 @@ header {
 
   .header__banner {
     flex: 3 1 $banner-min-width;
-    min-width: $banner-min-width;
     max-width: $banner-max-width;
     padding-left: 0;
   }
@@ -142,7 +140,6 @@ header {
     flex: 2 1 $min-width;
     margin-right: auto;
     max-width: 27.5ch;
-    min-width: $min-width;
     max-width: max(70vw, 320px);
     margin-top: auto;
     margin-bottom: auto;
