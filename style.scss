@@ -27,18 +27,20 @@ body {
   $gradient: linear-gradient(
     -45deg,
     rgba(0,0,0,0) 0%,
-    rgba(0,0,0,0) 25%,
-    rgba(0,0,0,0.55) 65%,
-    rgba(0,0,0,0.75) 100%
+    rgba(0,0,0,0) 35%,
+    rgba(0,0,0,0.35) 65%,
+    rgba(0,0,0,0.65) 100%
   );
   $image-url: url('./images/header_background.jpeg');
-  background-image: $gradient, $image-url;
+  background-image: $gradient,
+                    $image-url;
   background-position: bottom 10% right;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  filter: brightness(125%) blur(2px);
-  opacity: 0.6;
+  filter: brightness(120%)
+          blur(1px);
+  opacity: 0.8;
 }
 
 .background__content {
@@ -81,14 +83,16 @@ body {
 
 header {
   font-family: 'Roboto Condensed', sans-serif;
+  font-stretch: condensed;
   box-sizing: border-box;
   margin: 1.5rem;
-  max-width: min(100rem, 75vw);
+  max-width: min(120rem, 80vw);
   gap: 1rem;
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: flex-start;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
   .header__banner {
     font-size: 5rem;
     font-weight: bolder;
@@ -120,7 +124,7 @@ header {
     flex: 1 1 $logo-min-width;
     min-width: $logo-min-width;
     max-width: $logo-max-width;
-    @media (max-width: ($logo-min-width + $banner-min-width + 1rem) / 0.75) {
+    @media (max-width: ($logo-min-width + $banner-min-width + 1rem) / 0.80) {
       display: none;
     }
   }
@@ -133,10 +137,13 @@ header {
   }
 
   .header__motto {
+    $min-width: 0.75 * $banner-min-width;
     max-height: $header-row-max-height;
-    flex: 1 1 auto;
+    flex: 2 1 $min-width;
     margin-right: auto;
     max-width: 27.5ch;
+    min-width: $min-width;
+    max-width: max(70vw, 320px);
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -172,9 +179,10 @@ main {
   box-sizing: border-box;
   max-width: 50rem;
   padding: 0.5rem 1rem;
+  width: 100%;
   @media (min-width: 480px) {
     padding: 1rem 2.5rem;
-    width: 70%;
+    width: 75%;
   }
   @media (min-width: 1440px) {
     padding: 2rem 5rem;
