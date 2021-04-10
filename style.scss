@@ -1,4 +1,4 @@
-body, html { width: 100%; margin: 0; }
+body, html { width: 100%; height: 100%; margin: 0; }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
@@ -6,6 +6,8 @@ $color-secondary: #ffabf0;
 html {
   font-family: 'Roboto', sans-serif;
 }
+
+main { display: none }
 
 body {
   position: relative;
@@ -21,8 +23,8 @@ body {
 }
 
 .background__header {
+  flex: 1 1 100vmin;
   min-height: 100vmin;
-  max-height: min(33vmax, 1500px);
   box-sizing: border-box;
   $gradient: linear-gradient(
     -45deg,
@@ -37,8 +39,8 @@ body {
   background-position: bottom 10% right;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  filter: brightness(120%)
+//  background-attachment: fixed;
+  filter: brightness(130%)
           blur(1px);
   opacity: 0.8;
 }
@@ -92,7 +94,7 @@ header {
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: flex-start;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(5px 5px 5px rgba(222, 222, 222, 0.5));
   .header__banner {
     font-size: 5rem;
     font-weight: bolder;
@@ -135,12 +137,12 @@ header {
   }
 
   .header__motto {
-    $min-width: 0.75 * $banner-min-width;
+    $min-width: 0.7 * $banner-min-width;
     max-height: $header-row-max-height;
     flex: 2 1 $min-width;
     margin-right: auto;
     max-width: 27.5ch;
-    max-width: max(70vw, 320px);
+    max-width: max(70vw, 27.5ch);
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -160,6 +162,7 @@ header {
 body {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
   height: 100%;
 }
 
