@@ -1,6 +1,7 @@
 @use "sass:color";
 
-body, html { width: 100%; height: 100%; margin: 0; }
+html { width: 100%; margin: 0; padding: 0 }
+body { margin: 0; padding: 0 }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
@@ -9,10 +10,13 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-main { display: none }
+.page.welcome {
+  text-align: center;
+  padding: 1em;
+}
 
 body {
-  position: relative;
+  position: relative
 }
 
 .background {
@@ -25,9 +29,7 @@ body {
 }
 
 .background__header {
-  flex: 2 1 100vmin;
-  min-height: 100vmin;
-  box-sizing: border-box;
+  flex: 1 0 100vmin;
   $gradient: linear-gradient(
     -45deg,
     rgba(0,0,0,0) 0%,
@@ -49,7 +51,6 @@ body {
 
 .background__content {
   flex: 1 1 100vmin;
-  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -57,7 +58,6 @@ body {
 
 .background__content-left {
   $image-url: url('./images/content_background_left.jpeg');
-  height: 100%;
   width: 100%;
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -68,22 +68,12 @@ body {
 
 .background__content-right {
   $image-url: url('./images/content_background_right.jpeg');
-  height: 100%;
   width: 100%;
   background-position: bottom 30% right 33%;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: $image-url;
 //  background-attachment: fixed;
-}
-
-.background__main {
-  position: relative;
-  top: -1px;
-  z-index: -3;
-  background-color: $color-primary;
-  height: 100%;
-  width: 100%;
 }
 
 header {
@@ -166,16 +156,13 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  height: 100%;
 }
 
 main {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   width: 100%;
-  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  z-index: 1;
 }
 
 @mixin content-column {
