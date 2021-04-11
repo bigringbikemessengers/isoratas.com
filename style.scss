@@ -1,5 +1,20 @@
 @use "sass:color";
 
+@mixin content-column {
+  box-sizing: border-box;
+  max-width: 50rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  @media (min-width: 480px) {
+    padding: 1rem 2.5rem;
+    width: 75%;
+  }
+  @media (min-width: 1440px) {
+    padding: 2rem 5rem;
+    margin-left: 20%;
+  }
+}
+
 html { width: 100%; margin: 0; padding: 0 }
 body { margin: 0; padding: 0 }
 
@@ -28,8 +43,63 @@ body {
   flex-flow: column nowrap;
 }
 
+header nav {
+  flex: 1 1 100%;
+}
+
+nav {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  font-stretch: condensed;
+  font-size: clamp(1rem, 3.5vmax, 1.5rem);
+  font-weight: bold;
+  white-space: nowrap;
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    flex-flow: row wrap;
+    margin: 1px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+      flex: 0 1 auto;
+      color: $color-primary;
+      background-color: color.adjust(white, $alpha: -0.5);
+      &:hover:not(.current) {
+        color: $color-secondary;
+      }
+      &:hover, &.current {
+        background-color: color.adjust(grey, $alpha: -0.25);
+      }
+      &.current a {
+        cursor: default;
+      }
+    }
+    a {
+      color: inherit;
+      display: block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+    }
+  }
+}
+
 .background__header {
-  flex: 1 0 100vmin;
+  flex: 0 0;
+  @media (min-aspect-ratio: 10 / 15) {
+    flex-basis: 100vh;
+  }
+  @media (min-aspect-ratio: 10 / 20) and (max-aspect-ratio: 10 / 15) {
+    flex-basis: 70vh;
+  }
+  @media (max-aspect-ratio: 10 / 20) {
+    flex-basis: 80vh;
+  }
+  @media (max-width: 320px) {
+    flex-basis: 80vh;
+  }
   $gradient: linear-gradient(
     -45deg,
     rgba(0,0,0,0) 0%,
@@ -53,11 +123,12 @@ body {
   flex: 1 1 100vmin;
   width: 100%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .background__content-left {
   $image-url: url('./images/content_background_left.jpeg');
+  flex: 1 1 400px;
   width: 100%;
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -68,6 +139,7 @@ body {
 
 .background__content-right {
   $image-url: url('./images/content_background_right.jpeg');
+  flex: 1 1 500px;
   width: 100%;
   background-position: bottom 30% right 33%;
   background-repeat: no-repeat;
@@ -87,7 +159,7 @@ header {
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: flex-start;
-  filter: drop-shadow(0px 0px 2px color.adjust(white, $alpha: 0.25));
+  filter: drop-shadow(0px 0px 2px color.adjust(white, $alpha: -0.25));
   .header__banner {
     font-size: 5rem;
     font-weight: bolder;
@@ -163,21 +235,6 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-
-@mixin content-column {
-  box-sizing: border-box;
-  max-width: 50rem;
-  padding: 0.5rem 1rem;
-  width: 100%;
-  @media (min-width: 480px) {
-    padding: 1rem 2.5rem;
-    width: 75%;
-  }
-  @media (min-width: 1440px) {
-    padding: 2rem 5rem;
-    margin-left: 20%;
-  }
 }
 
 .page {
