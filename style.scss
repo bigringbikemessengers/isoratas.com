@@ -25,7 +25,7 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-.page.welcome {
+.page.home {
   text-align: center;
   padding: 1em;
 }
@@ -47,6 +47,25 @@ header nav {
   flex: 1 1 100%;
 }
 
+
+@keyframes logo-spin {
+    0% { transform: rotate(0deg); }
+    100% {  transform: rotate(359deg); }
+}
+
+.header__logo--spin {
+  animation: logo-spin 0.5s ease-in-out 1;
+}
+
+.header__logo--spin-forward {
+  @extend .header__logo--spin;
+  animation-direction: normal;
+}
+.header__logo--spin-backward {
+  @extend .header__logo--spin;
+  animation-direction: reverse;
+}
+
 nav {
   font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
@@ -66,12 +85,12 @@ nav {
     li {
       flex: 0 1 auto;
       color: $color-primary;
-      background-color: color.adjust(white, $alpha: -0.5);
+      background-color: color.adjust(white, $alpha: -0.66);
       &:hover:not(.current) {
         color: $color-secondary;
       }
-      &:hover, &.current {
-        background-color: color.adjust(grey, $alpha: -0.25);
+      &:hover, & a.current {
+        background-color: color.adjust(white, $alpha: -0.33);
       }
       &.current a {
         cursor: default;
@@ -222,6 +241,9 @@ header {
     line-height: 1;
     font-style: italic;
   }
+  object {
+    pointer-events: none;
+  }
 }
 
 body {
@@ -237,7 +259,7 @@ main {
   margin-right: auto;
 }
 
-.page {
+.card {
   @include content-column;
   margin-bottom: 5em;
   box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);
@@ -245,6 +267,10 @@ main {
   opacity: 1;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.page--hidden {
+  display: none;
 }
 
 footer {

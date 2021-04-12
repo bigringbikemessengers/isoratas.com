@@ -10,49 +10,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+
+    <script src="navigation.js" defer="true"></script>
   </head>
   <body>
     <header>
-      <div class="header__logo" role="img">
+      <section class="header__logo" role="img">
         <object data="images/logo.svg" type="image/svg+xml"></object>
-      </div>
-      <div class="header__banner"
-           aria-label="Iso Ratas pyörälähetit">
-        <object data="images/banner.svg" type="image/svg+xml"></object>
-      </div>
-      <div class="header__motto">
+      </section>
+      <a href="#" class="header__banner">
+        <object data="images/banner.svg"
+                type="image/svg+xml"
+                aria-label="Iso Ratas pyörälähetit">
+          Iso Ratas pyörälähetit
+        </object>
+      </a>
+      <section class="header__motto">
         Vastuullinen, nopea ja luotettava <strong>lähetti&shy;palvelu</strong> Helsingissä
-      </div>
-    <nav>
-      <ul>
-        <li>
-          <a href="#meistä">Meistä</a>
-        </li>
-        <li>
-          <a href="#hinnasto">Hinnasto</a>
-        </li>
-        <li>
-          <a href="#ota-yhteyttä">Ota yhteyttä</a>
-        </li>
-      </ul>
-    </nav>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="#meistä">Meistä</a>
+          </li>
+          <li>
+            <a href="#hinnasto">Hinnasto</a>
+          </li>
+          <li>
+            <a href="#ota-yhteyttä">Ota yhteyttä</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <article class="page welcome">
+      <article id="" class="page card home" data-page-title="Iso Ratas pyörälähetit">
         <markdown>
-          <include src="welcome.markdown"></include>
+          <include src="home.markdown"></include>
         </markdown>
       </article>
-      <article class="page what">
-        <markdown>
-          <include src="what_is_isoratas.markdown"></include>
-        </markdown>
-      </article>
-      <article class="page why">
-        <markdown>
-          <include src="why_isoratas.markdown"></include>
-        </markdown>
-      </article>
+      <section id="meistä" class="page" data-page-title="Iso Ratas: meistä">
+        <article class="card what">
+          <markdown>
+            <include src="what_is_isoratas.markdown"></include>
+          </markdown>
+        </article>
+        <article class="card why">
+          <markdown>
+            <include src="why_isoratas.markdown"></include>
+          </markdown>
+        </article>
+      </section>
     </main>
     <footer>
       <p>
