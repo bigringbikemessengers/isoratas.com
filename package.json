@@ -1,12 +1,17 @@
 {
   "devDependencies": {
     "@parcel/transformer-sass": "2.0.0-beta.2",
+    "babel-preset-env": "^1.7.0",
     "parcel": "^2.0.0-beta.2",
     "posthtml-include": "^1.7.0",
     "posthtml-markdownit": "^1.2.3"
   },
   "scripts": {
     "start": "parcel serve ./index.html",
-    "build": "parcel build ./index.html"
+    "build": "parcel build --no-source-maps ./index.html"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^4.2.3",
+    "@fontsource/roboto-condensed": "^4.2.2"
   }
 }

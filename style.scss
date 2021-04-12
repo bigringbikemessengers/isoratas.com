@@ -1,4 +1,5 @@
 @use "sass:color";
+@import "./node_modules/@fontsource/roboto-condensed/latin-400.css";
 
 @mixin content-column {
   box-sizing: border-box;
