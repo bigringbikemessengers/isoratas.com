@@ -2,6 +2,7 @@
 
 @mixin content-column {
   box-sizing: border-box;
+  min-width: 30ch;
   max-width: 50rem;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -15,19 +16,59 @@
   }
 }
 
-html { width: 100%; margin: 0; padding: 0 }
-body { margin: 0; padding: 0 }
+html { width: 100%; margin: 0; padding: 0; min-height: 100vh; }
+body { margin: 0; padding: 0; min-height: 100vh; }
 
 $color-primary: #00314d;
 $color-secondary: #ffabf0;
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .page.home {
   text-align: center;
   padding: 1em;
+}
+
+.page.prices .price-table {
+  @include content-column;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .price-extras {
+    margin-top: 2rem;
+    box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);
+    padding: 1rem 2rem;
+    background-color: white;
+    opacity: 1;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family: 'Roboto Condensed', sans-serif;      
+    dt {
+      font-weight: bold;
+    }
+  }
+}
+
+.zones-map {
+  min-height: 500px;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  iframe {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+.contact-form {
+  padding: 0 !important;
+  height: 1000px;
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 body {
@@ -41,6 +82,7 @@ body {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
 }
 
 header nav {
@@ -149,6 +191,7 @@ nav {
   $image-url: url('./images/content_background_left.jpeg');
   flex: 1 1 400px;
   width: 100%;
+  min-height: 300px;
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -160,6 +203,7 @@ nav {
   $image-url: url('./images/content_background_right.jpeg');
   flex: 1 1 500px;
   width: 100%;
+  min-height: 200px;  
   background-position: bottom 30% right 33%;
   background-repeat: no-repeat;
   background-size: cover;
