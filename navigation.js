@@ -2,9 +2,8 @@
 
 const router = window.router = new Router;
 var historyStateId = history.state && history.state.id ? history.state.id : 0;
-router.handleRouteChange();
 
-window.addEventListener('load', event => {
+window.addEventListener('DOMContentLoaded', event => {
   router.handleRouteChange();
 })
 
