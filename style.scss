@@ -44,13 +44,19 @@ html {
   }
 }
 
-.home {
+.page {
   display: flex;
-  gap: 1rem;
+  flex-flow: column nowrap;
+  &.page--hidden {
+    display: none;
+  }
+}
+
+.page.home {
   flex-flow: row wrap;
 }
 
-.home .card {
+.page.home .card {
   &.our-services {
     flex: 1 1 30ch;
   }
@@ -338,6 +344,7 @@ main {
 }
 
 .page {
+  gap: 1rem;
   @include content-column;
 }
 
@@ -351,15 +358,11 @@ main {
 
 .card__title {
   margin: 0.15em 0;
-  padding: 0 0.5em;
+  padding: 0 0.5rem;
 }
 
 .card__content {
-  margin: 0.5em 1.5em;
-}
-
-.page--hidden {
-  display: none;
+  margin: 0.5rem 1.5rem;
 }
 
 footer {
