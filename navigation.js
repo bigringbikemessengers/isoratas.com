@@ -5,10 +5,19 @@ var historyStateId = history.state && history.state.id ? history.state.id : 0;
 
 window.addEventListener('DOMContentLoaded', event => {
   router.handleRouteChange();
+  router.anchors.forEach(anchor => {
+    const href = anchor.href;
+    anchor.addEventListener('click', event => {
+      event.preventDefault(); // prevent scrolling
+      historyStateId++;
+      history.pushState({ id: historyStateId }, null, href);
+      router.handleRouteChange();
+      spinLogo({ forward: true });
+    })
+  })
 })
 
 window.addEventListener('hashchange', event => {
-  console.log(event);
   router.handleRouteChange();
 })
 
@@ -21,17 +30,6 @@ window.addEventListener('popstate', event => {
       spinLogo({ backward: true })
     historyStateId = historyState.id;
   }
-})
-
-router.anchors.forEach(anchor => {
-  const href = anchor.href;
-  anchor.addEventListener('click', event => {
-    historyStateId++;
-    history.pushState({ id: historyStateId }, null, href);
-    router.handleRouteChange();
-    event.preventDefault(); // prevent scrolling
-    spinLogo({ forward: true });
-  })
 })
 
 function Router() {
@@ -116,11 +114,9 @@ function spinLogo(options = {}) {
   logoClone.classList.remove('header__logo--spin-forward');
   logoClone.classList.remove('header__logo--spin-backward');
   if (!options.backward) {
-    console.log('spin forward');
     logoClone.classList.add('header__logo--spin-forward');
   }
   if (options.backward && !options.forward) {
-    console.log('spin backward');
     logoClone.classList.add('header__logo--spin-backward');
   }
   logo.parentNode.replaceChild(logoClone, logo);
