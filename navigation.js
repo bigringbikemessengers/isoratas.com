@@ -94,10 +94,10 @@ function Router() {
       page.classList.add('page--displayed');
       if (page.dataset.pageTitle)
         document.title = page.dataset.pageTitle;
-      if (page.matches('.prices'))
-        addGoogleMapsInlineFrame(page.querySelector('.zones-map'));
-      if (page.matches('.contact'))
-        addGoogleFormsInlineFrame(page.querySelector('.contact-form'));
+      Array.prototype.forEach.call(
+        page.querySelectorAll('[data-src]'),
+        loadDataSrc
+      )
     },
     handleRouteChange() {
       var displayedPage;
@@ -136,27 +136,9 @@ function spinLogo(options = {}) {
   logo.parentNode.replaceChild(logoClone, logo);
 }
 
-function addGoogleMapsInlineFrame(element) {
-  if (!element.querySelector('iframe')) {
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('loading', 'lazy');
-    iframe.setAttribute('sandbox', "allow-scripts");
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('aria-label', "Vyöhykkeet kartta");
-    iframe.setAttribute('src', 'https://www.google.com/maps/d/embed?mid=1ZrmW-kxq4VK-ND9Hj6kWlcuD3-z18mBB');
-    iframe.setAttribute('allowfullscreen', 'true');
-    element.appendChild(iframe);
-  }
-}
-
-function addGoogleFormsInlineFrame(element) {
-  if (!element.querySelector('iframe')) {
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('sandbox', 'allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('aria-label', "Google Forms, Yhteydenotto");
-    iframe.setAttribute('src', "https://docs.google.com/forms/d/e/1FAIpQLSeonJv0GJ3N90DfdGjhBoOlpKg1vMzpJu9Nhf-qhnDTTPu-Ew/viewform?embedded, true");
-    iframe.setAttribute('allowfullscreen', "");
-    element.appendChild(iframe);
-  }
+// Set element[src] to the value from element[data-src].
+// Use to load iframes, images, objects, only when they are needed.
+function loadDataSrc(element) {
+  if (element && element.dataset.src && !element.src)
+    element.src = element.dataset.src;
 }
