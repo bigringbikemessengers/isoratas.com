@@ -34,6 +34,17 @@ html {
   color: $color-primary;
 }
 
+a {
+  color: $color-primary;
+  &:hover, &:focus {
+    color: color.adjust($color-secondary, $lightness: -10%);
+  }
+  &:active {
+    color: color.adjust($color-secondary);
+  }
+  white-space: nowrap;
+}
+
 .icon {
   vertical-align: sub;
   user-select: none;
@@ -183,6 +194,9 @@ nav {
       display: block;
       padding: 0.5em 1em;
       text-decoration: none;
+      &:focus {
+        color: inherit;
+      }
     }
   }
 }
@@ -375,10 +389,7 @@ footer {
   margin-right: auto;
 
   color: $color-primary;
-  a {
-    text-decoration: none;
-    color: $color-primary;
-  }
+
   .title {
     font-weight: bold;
     font-size: 1.1em;
@@ -386,14 +397,17 @@ footer {
   }
   .datum {
     display: block;
+    text-decoration: none;
     &:before {
       content: '⚙';
+      text-decoration: none;
       margin-right: 0.5rem;
       vertical-align: middle;
       font-size: 1rem;
     }
     &:after {
       content: '⚙';
+      text-decoration: none;
       margin-left: 0.5rem;
       vertical-align: middle;
       font-size: 1rem;
