@@ -178,13 +178,17 @@ nav {
     li {
       flex: 0 1 auto;
       color: $color-primary;
-      background-color: color.adjust(white, $alpha: -0.66);
+      background-color: color.adjust(white, $alpha: -0.6);
       &:hover:not(.current) {
         color: $color-secondary;
       }
       &:hover, & a.current, & a:focus {
-        background-color: color.adjust(white, $alpha: -0.33);
+        background-color: color.adjust(white, $alpha: -0.3);
       }
+      & a.current {
+        background-color: color.adjust(white, $alpha: -0.15);
+      }
+
       &.current a {
         cursor: default;
       }
