@@ -1,4 +1,4 @@
-"use strict";
+import scrollIntoView from 'scroll-into-view-if-needed';
 
 const router = window.router = new Router;
 var historyStateId = history.state && history.state.id ? history.state.id : 0;
@@ -8,10 +8,21 @@ window.addEventListener('DOMContentLoaded', event => {
   router.anchors.forEach(anchor => {
     const href = anchor.href;
     anchor.addEventListener('click', event => {
-      event.preventDefault(); // prevent scrolling
+      event.preventDefault(); // prevent scrolling to the element
       historyStateId++;
       history.pushState({ id: historyStateId }, null, href);
-      router.handleRouteChange();
+      const page = router.handleRouteChange();
+      if (page) {
+        const firstTitle = page.querySelector('.card__title');
+        if (firstTitle) {
+          scrollIntoView(firstTitle, {
+            behavior: 'smooth',
+            scrollMode: 'if-needed',
+            block: 'center',
+            inline: 'center',
+          });
+        }
+      }
       spinLogo({ forward: true });
     })
   })
@@ -89,9 +100,12 @@ function Router() {
         addGoogleFormsInlineFrame(page.querySelector('.contact-form'));
     },
     handleRouteChange() {
+      var displayedPage;
       router.routePages().forEach(page => {
-        if (router.isCurrentRoute(page.route))
+        if (router.isCurrentRoute(page.route)) {
+          displayedPage = displayedPage || page;
           router.displayPage(page);
+        }
         else
           router.hidePage(page);
       });
@@ -102,6 +116,7 @@ function Router() {
         else
           anchor.classList.remove('current');
       })
+      return displayedPage;
     }
   }
 }

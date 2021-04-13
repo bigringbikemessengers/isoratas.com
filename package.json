@@ -4,7 +4,10 @@
     "babel-preset-env": "^1.7.0",
     "parcel": "^2.0.0-beta.2",
     "posthtml-include": "^1.7.0",
-    "posthtml-markdownit": "^1.2.3"
+    "posthtml-lint": "^0.1.1",
+    "posthtml-markdownit": "^1.2.3",
+    "scroll-into-view-if-needed": "^2.2.28",
+    "subfont": "^5.4.1"
   },
   "scripts": {
     "start": "parcel serve ./index.html",
@@ -12,6 +15,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.2.3",
-    "@fontsource/roboto-condensed": "^4.2.2"
+    "@fontsource/roboto-condensed": "^4.2.2",
+    "css.gg": "^2.0.0"
   }
 }
