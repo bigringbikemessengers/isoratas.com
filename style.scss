@@ -206,19 +206,7 @@ nav {
 }
 
 .background__header {
-  flex: 0 0;
-  @media (min-aspect-ratio: 10 / 15) {
-    flex-basis: 100vh;
-  }
-  @media (min-aspect-ratio: 10 / 20) and (max-aspect-ratio: 10 / 15) {
-    flex-basis: 70vh;
-  }
-  @media (max-aspect-ratio: 10 / 20) {
-    flex-basis: 80vh;
-  }
-  @media (max-width: 320px) {
-    flex-basis: 80vh;
-  }
+  flex: 0 0 100vh;
   $gradient: linear-gradient(
     -45deg,
     rgba(0,0,0,0) 0%,
@@ -362,8 +350,12 @@ main {
 }
 
 .page {
-  gap: 1rem;
+  gap: 3rem;
+  @media (max-width: 480px) {
+    gap: 4rem;
+  }
   @include content-column;
+  margin-bottom: 4rem;
 }
 
 .card {
