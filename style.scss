@@ -182,7 +182,7 @@ nav {
       &:hover:not(.current) {
         color: $color-secondary;
       }
-      &:hover, & a.current {
+      &:hover, & a.current, & a:focus {
         background-color: color.adjust(white, $alpha: -0.33);
       }
       &.current a {
