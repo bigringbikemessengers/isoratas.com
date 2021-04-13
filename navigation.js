@@ -34,15 +34,11 @@ window.addEventListener('popstate', event => {
 
 function Router() {
   return {
-    get nav() {
-      return document
-        .getElementsByTagName('nav')[0];
-    },
     get anchors() {
+      const routes = this.allPages.map(page => page.route);
       return Array.prototype.slice.call(
-        this.nav
-          .querySelectorAll('a[href]')
-      ).concat(document.querySelector('header a'));
+        document.querySelectorAll('a[href]')
+      ).filter(anchor => routes.indexOf(this.anchorRoute(anchor)) >= 0);
     },
     anchorRoute(anchor) {
       if (!anchor.href) return;
@@ -62,6 +58,9 @@ function Router() {
     },
     isCurrentRoute(route) {
       return route === this.currentRoute;
+    },
+    get allPages() {
+      return this.routePages()
     },
     routePages(route) {
       return Array.prototype.slice.call(
