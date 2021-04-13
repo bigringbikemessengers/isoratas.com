@@ -38,11 +38,31 @@
       </nav>
     </header>
     <main>
-      <article id="" class="page card home" data-page-title="Iso Ratas pyörälähetit">
-        <markdown>
-          <include src="home.markdown"></include>
-        </markdown>
-      </article>
+      <section id="" class="page home" data-page-title="Iso Ratas pyörälähetit">
+        <article class="card our-services">
+          <h2 class="card__title">Palvelumme</h2>
+          <div class="card__content">
+            Vastaamme lähetti­tarpeisiinne ydinpääkaupunki­seudulla vastuullisesti, nopeasti ja luotettavasti.
+          </div>
+        </article>
+        <article class="card open">
+          <h2 class="card__title">Aukioloajat</h2>
+          <div class="card__content">
+            <div class="days">
+              <span class="icon" role="img">
+                <include src="icons/date_range.svg"></include>
+              </span>
+              ma–pe
+            </div>
+            <div class="hours">
+              <span class="icon" role="img">
+                <include src="icons/schedule.svg"></include>
+              </span>
+              08:00–17:00
+            </div>
+          </p>
+        </article>
+      </section>
       <section id="meistä" class="page" data-page-title="Iso Ratas: meistä">
         <article class="card what">
           <markdown>
@@ -62,7 +82,7 @@
           </markdown>
         </article>
         <article class="price-table">
-          <img src="images/prices.jpeg" alt="Hinnasto kuva">
+          <img importance="low" src="images/prices.jpeg" alt="Hinnasto kuva">
           <div class="price-extras">
             <dl>
               <dt>Odotus- ja asiointiajan veloitus jos kesto on pitempi kuin viisi minuuttia:</dt>
@@ -96,10 +116,13 @@
       </p>
     </footer>
     <aside class="background">
-      <article class="background__header"></article>
+      <article class="background__header">
+      </article>
       <section class="background__content">
-        <article class="background__content-left"></article>
-        <article class="background__content-right"></article>
+        <article class="background__content-left">
+        </article>
+        <article class="background__content-right">
+        </article>
       </section>
     </aside>
   </body>

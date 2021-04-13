@@ -5,14 +5,20 @@
   box-sizing: border-box;
   min-width: 30ch;
   max-width: 50rem;
-  padding: 0.5rem 1rem;
   width: 100%;
+  @media (min-width: 361px) {
+    padding: 0.5rem 1rem;
+  }
+
   @media (min-width: 480px) {
     padding: 1rem 2.5rem;
-    width: 75%;
+    width: 80%;
   }
   @media (min-width: 1440px) {
-    padding: 2rem 5rem;
+    padding: 1.5rem 3rem;
+    margin-left: 10%;
+  }
+  @media (min-width: 1600px) {
     margin-left: 20%;
   }
 }
@@ -25,11 +31,38 @@ $color-secondary: #ffabf0;
 
 html {
   font-family: 'Roboto Condensed', sans-serif;
+  color: $color-primary;
 }
 
-.page.home {
-  text-align: center;
-  padding: 1em;
+.icon {
+  vertical-align: sub;
+  user-select: none;
+  svg {
+    fill: $color-primary;
+    height: 1.25em;
+    width: 1.25em;
+  }
+}
+
+.home {
+  display: flex;
+  gap: 1rem;
+  flex-flow: row wrap;
+}
+
+.home .card {
+  &.our-services {
+    flex: 1 1 30ch;
+  }
+  &.open {
+    max-width: min-content;
+    white-space: nowrap;
+    flex: 1 1 15ch
+  }
+  &.open .card__content {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 }
 
 .page.prices .price-table {
@@ -46,7 +79,7 @@ html {
     opacity: 1;
     font-size: 1.2rem;
     line-height: 1.5;
-    font-family: 'Roboto Condensed', sans-serif;      
+    font-family: 'Roboto Condensed', sans-serif;
     dt {
       font-weight: bold;
     }
@@ -175,7 +208,7 @@ nav {
   background-position: bottom 45% right;
   background-repeat: no-repeat;
   background-size: cover;
-//  background-attachment: fixed;
+  background-attachment: fixed;
   filter: brightness(130%)
           blur(1px);
   opacity: 0.8;
@@ -197,14 +230,14 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: $image-url;
-//  background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 .background__content-right {
   $image-url: url('./images/content_background_right.jpeg');
   flex: 1 1 500px;
   width: 100%;
-  min-height: 200px;  
+  min-height: 200px;
   background-position: bottom 30% right 33%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -304,14 +337,25 @@ main {
   margin-right: auto;
 }
 
-.card {
+.page {
   @include content-column;
-  margin-bottom: 5em;
+}
+
+.card {
   box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);
   background-color: white;
   opacity: 1;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.card__title {
+  margin: 0.15em 0;
+  padding: 0 0.5em;
+}
+
+.card__content {
+  margin: 0.5em 1.5em;
 }
 
 .page--hidden {
