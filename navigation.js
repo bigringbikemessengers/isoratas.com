@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', event => {
         }
       }
       spinLogo({ forward: true });
+      anchor.blur();
     })
   })
 })

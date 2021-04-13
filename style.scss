@@ -194,13 +194,9 @@ nav {
       }
     }
     a {
-      color: inherit;
       display: block;
       padding: 0.5em 1em;
       text-decoration: none;
-      &:focus {
-        color: inherit;
-      }
     }
   }
 }
