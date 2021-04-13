@@ -5,163 +5,24 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.scss">
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
     <script src="navigation.js"></script>
   </head>
   <body>
     <header>
-      <section class="header__logo" role="img">
-        <object tabindex="-1" data="images/logo.svg" type="image/svg+xml"></object>
-      </section>
-      <a href="#" class="header__banner">
-        <object tabindex="-1"
-                data="images/banner.svg"
-                type="image/svg+xml"
-                aria-label="Iso Ratas pyörälähetit">
-          Iso Ratas pyörälähetit
-        </object>
-      </a>
-      <section class="header__motto">
-        Vastuullinen, nopea ja luotettava <strong>lähetti&shy;palvelu</strong> Helsingissä
-      </section>
-      <nav>
-        <ul>
-          <li>
-            <a href="#meistä">Meistä</a>
-          </li>
-          <li>
-            <a href="#hinnasto">Hinnasto</a>
-          </li>
-          <li>
-            <a href="#ota-yhteyttä">Ota yhteyttä</a>
-          </li>
-        </ul>
-      </nav>
+      <include src="header.html"></include>
     </header>
     <main>
-      <section id="" class="page home" data-page-title="Iso Ratas pyörälähetit">
-        <article class="card our-services">
-          <h2 class="card__title">Palvelumme</h2>
-          <div class="card__content">
-            Vastaamme lähetti­tarpeisiinne ydinpääkaupunki­seudulla vastuullisesti, nopeasti ja luotettavasti.
-          </div>
-        </article>
-        <article class="card open">
-          <h2 class="card__title">Aukioloajat</h2>
-          <div class="card__content">
-            <div class="days">
-              <span class="icon" role="img">
-                <include src="icons/date_range.svg"></include>
-              </span>
-              ma–pe
-            </div>
-            <div class="hours">
-              <span class="icon" role="img">
-                <include src="icons/schedule.svg"></include>
-              </span>
-              08:00–17:00
-            </div>
-          </p>
-        </article>
-      </section>
-      <section id="meistä" class="page" data-page-title="Iso Ratas: meistä">
-        <article class="card what">
-          <h2 class="card__title">Mikä on Iso Ratas?</h2>
-          <div class="card__content">
-            <markdown>
-              <include src="what_is_isoratas.markdown"></include>
-            </markdown>
-          </div>
-        </article>
-        <article class="card why">
-          <h2 class="card__title">Miksi käyttää Isoa Ratasta?</h2>
-          <div class="card__content">
-            <markdown>
-              <include src="why_isoratas.markdown"></include>
-            </markdown>
-          </div>
-        </article>
-      </section>
-      <section id="hinnasto" class="page prices" data-page-title="Iso Ratas: hinnasto">
-        <article class="card price">
-          <h2 class="card__title">Hinnasto</h2>
-          <div class="card__content">
-            <markdown>
-              <include src="prices.markdown"></include>
-            </markdown>
-          </div>
-        </article>
-        <article class="price-table">
-          <img importance="low" loading="lazy" src="images/prices.jpeg" alt="Hinnasto kuva">
-          <div class="price-extras">
-            <dl>
-              <dt>Odotus- ja asiointiajan veloitus jos kesto on pitempi kuin viisi minuuttia:</dt>
-              <dd>0,75€ / min</dd>
-
-              <dt>Painolisä:</dt>
-              <dd>2€ / 5 kg</dd>
-
-              <dt>Tilavuusehto:</dt>
-              <dd>1 m³ = 250 kg</dd>
-            </dl>
-          </div>
-        </article>
-        <article class="zones-map card">
-          <iframe
-            data-src="https://www.google.com/maps/d/embed?mid=1ZrmW-kxq4VK-ND9Hj6kWlcuD3-z18mBB"
-            sandbox="allow-scripts"
-            frameborder="0"
-            aria-label="Vyöhykkeet kartta"
-            allowfullscreen="true">
-          </iframe>
-        </article>
-      </section>
-      <section id="ota-yhteyttä" class="page contact" data-page-title="Iso Ratas: ota yhteyttä">
-        <article class="card contact">
-          <h2 class="card__title">Ota yhteyttä</h2>
-          <div class="card__content">
-            <div class="phone">
-              <span class="icon" role="img">
-                <include src="icons/phone.svg"></include>
-              </span>
-              <a href="tel:04578321119">045 7832 1119</a>
-            </div>
-            <div class="email">
-              <span class="icon" role="img">
-                <include src="icons/email.svg"></include>
-              </span>
-              <a href="mailto:info@isoratas.com">info@isoratas.com</a>
-            </div>
-          </div>
-        </article>
-        <article class="contact-form card">
-          <iframe
-            data-src="https://docs.google.com/forms/d/e/1FAIpQLSeonJv0GJ3N90DfdGjhBoOlpKg1vMzpJu9Nhf-qhnDTTPu-Ew/viewform?embedded"
-            sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads"
-            frameborder="0"
-            aria-label="Google Forms, Yhteydenotto"
-            allowfullscreen="">
-          </iframe>
-        </article>
-      </section>
-
+      <include src="main.html"></include>
     </main>
     <footer>
-      <p>
-        <span class="title">Iso Ratas pyörälähetit Oy</span>
-        <span class="datum">y-tunnus: 3167407-5</span>
-        <a class="datum" href="mailto:info@isoratas.com">info@isoratas.com</a>
-        <a class="datum" href="tel:04578321119">puh. 045 7832 1119</a>
-      </p>
+      <include src="footer.html"></include>
     </footer>
-    <aside class="background">
-      <article class="background__header">
-      </article>
+    <aside class="background" role="img">
+      <article class="background__header"></article>
       <section class="background__content">
-        <article class="background__content-left">
-        </article>
-        <article class="background__content-right">
-        </article>
+        <article class="background__content-left"></article>
+        <article class="background__content-right"></article>
       </section>
     </aside>
   </body>
