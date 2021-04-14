@@ -79,7 +79,7 @@ function Router() {
         document.querySelectorAll(
           route !== undefined
             ? `.page[id=${route}]`
-            : `.page[id]`
+            : `.page`
         )
       ).map(page => {
         page.route = page.id;
@@ -102,7 +102,7 @@ function Router() {
     },
     handleRouteChange() {
       var displayedPage;
-      router.routePages().forEach(page => {
+      this.allPages.forEach(page => {
         if (router.isCurrentRoute(page.route)) {
           displayedPage = displayedPage || page;
           router.displayPage(page);
