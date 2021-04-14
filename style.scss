@@ -217,8 +217,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  filter: brightness(130%)
-          blur(1px);
+  will-change: transform;
   opacity: 0.8;
 }
 
@@ -239,6 +238,7 @@ nav {
   background-size: cover;
   background-image: $image-url;
   background-attachment: fixed;
+  will-change: transform;
 }
 
 .background__content-right {
