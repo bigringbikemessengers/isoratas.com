@@ -12,7 +12,7 @@
 
   @media (min-width: 480px) {
     padding: 1rem 2.5rem;
-    width: 80%;
+    width: 75%;
   }
   @media (min-width: 1440px) {
     padding: 1.5rem 3rem;
@@ -134,6 +134,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
+  display: none;
 }
 
 header nav {
@@ -261,7 +262,29 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: $image-url;
-//  background-attachment: fixed;
+}
+
+.main-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  z-index: -1;
+  $gradient: linear-gradient(
+    -45deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 35%,
+    rgba(0,0,0,0.35) 65%,
+    rgba(0,0,0,0.65) 100%
+  );
+  $image-url: url('./images/header_background.jpeg');
+  background-image: $gradient,
+                    $image-url;
+  background-position: bottom 45% right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: transform;
+  opacity: 0.8;
 }
 
 header {
