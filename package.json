@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "parcel serve ./index.html",
-    "build": "parcel build --no-source-maps ./index.html"
+    "build": "parcel build --no-source-maps ./index.html && cp -t dist/ _redirects"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.2.3",
