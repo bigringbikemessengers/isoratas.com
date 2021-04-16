@@ -124,17 +124,17 @@ function Router() {
 
 function spinLogo(options = {}) {
   const logo = document.querySelector('.header__logo');
-  const logoClone = logo.cloneNode(true);
-  logoClone.classList.remove('header__logo--spin');
-  logoClone.classList.remove('header__logo--spin-forward');
-  logoClone.classList.remove('header__logo--spin-backward');
+  logo.classList.remove('header__logo--spin');
+  logo.classList.remove('header__logo--spin-forward');
+  logo.classList.remove('header__logo--spin-backward');
+  // triggers reflow, which causes animations to be restarted
+  void logo.offsetWidth;
   if (!options.backward) {
-    logoClone.classList.add('header__logo--spin-forward');
+    logo.classList.add('header__logo--spin-forward');
   }
   if (options.backward && !options.forward) {
-    logoClone.classList.add('header__logo--spin-backward');
+    logo.classList.add('header__logo--spin-backward');
   }
-  logo.parentNode.replaceChild(logoClone, logo);
 }
 
 // Set element[src] to the value from element[data-src].
