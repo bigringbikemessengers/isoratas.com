@@ -1,7 +1,11 @@
 {
   "plugins": {
     "posthtml-include": {},
-    "posthtml-markdownit": {},
+    "posthtml-markdownit": {
+      "markdownit": {
+        "html": true
+      }
+    },
     "posthtml-lint": {}
   }
 }

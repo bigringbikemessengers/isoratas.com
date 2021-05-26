@@ -82,12 +82,14 @@ a {
   }
 }
 
-.page.prices .price-table {
-  @include content-column;
+.page.prices {
   img {
     width: 100%;
     height: auto;
   }
+}
+.page.prices .price-table {
+  @include content-column;
   .price-extras {
     margin-top: 2rem;
     box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);

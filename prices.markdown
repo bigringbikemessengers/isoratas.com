@@ -1,4 +1,5 @@
-#### Alla hinnastotaulukkomme yksittäisille kuljetuksille. Se perustuu lähetyksen kiireellisyyteen ja etäisyyteen Helsingin keskustasta. 
+
+<img importance="low" loading="lazy" src="images/prices.jpeg" alt="Hinnasto kuva">
 
 Aikataulurivi valitaan hinnastosta lyhyemmän aikaikkunan perusteella. Esimerkiksi jos lähetyksen noudon aikaikkuna on kaksi tuntia ja viennin neljä, hinta löytyy riviltä 2h. EXPRESS-kuljetus koskee mahdollisimman nopeasti toimitettavia lähetyksiä, sekä kuljetuksia joissa ainakin toinen aikaikkunoista on lyhyempi kuin tunnin.
 
