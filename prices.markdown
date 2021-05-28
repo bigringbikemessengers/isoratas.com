@@ -7,6 +7,4 @@ Vyöhykesarake valitaan kauempana keskustasta olevan sijainnin perusteella. Esim
 
 Kuljetusvyöhykkeidemme rajaukset löydät kartasta alta. Tarkan osoitehaun kartalta saa klikkaamalla ensin kartan auki sen oikean yläkulman painikkeesta.
 
-Kuljetukset 5. vyöhykkeen tai aukioloaikamme ulkopuolella ovat erikseen sovittavissa, älä epäröi [ottaa yhteyttä](#ota-yhteyttä)!
-
-Säännöllisiin tai suuren volyymin kuljetustarpeisiin teemme mielellämme räätälöidyn tarjouksen. [Ota yhteyttä](#ota-yhteyttä)!
+Säännöllisiin tai suuren volyymin kuljetustarpeisiin teemme mielellämme räätälöidyn tarjouksen, samoin kuin kuljetuksiin 5. vyöhykkeen tai aukioloaikamme ulkopuolella. [Ota yhteyttä](#ota-yhteyttä)!
