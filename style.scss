@@ -9,7 +9,6 @@
   @media (min-width: 361px) {
     padding: 0.5rem 1rem;
   }
-
   @media (min-width: 480px) {
     padding: 1rem 2.5rem;
     width: 75%;
@@ -82,12 +81,71 @@ a {
   }
 }
 
+.instagram .card__title {
+  font-size: 1.5rem;
+  display: inline-block;
+  box-shadow: 0 0 44px 5px rgba(0,0,0,0.25);
+  background-color: white;
+  padding: 0.25rem 0.5rem;
+  &:hover {
+    * {
+      color: color.adjust($color-secondary, $lightness: -10%);
+      fill: color.adjust($color-secondary, $lightness: -10%);
+    }
+  }
+  .glyph {
+    height: 1.5em;
+    display: inline;
+    vertical-align: middle;
+    fill: $color-primary;
+  }
+  a {
+    text-decoration: none;
+  }
+
+}
+.instagram.card {
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
+}
+.instagram__feed {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.instagram__post {
+  box-sizing: border-box;
+  padding: 0.15rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 1rem 5px rgba(0,0,0,0.15);
+    padding: 0;
+  }
+  flex: 1 1 50%;
+  @media (min-width: 600px) {
+    flex: 1 1 33%;
+  }
+  @media (min-width: 800px) {
+    flex: 1 1 25%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+  }
+}
+
 .page.prices {
   img {
     width: 100%;
     height: auto;
   }
 }
+
 .page.prices .price-table {
   @include content-column;
   .price-extras {
@@ -386,8 +444,8 @@ main {
   @media (max-width: 480px) {
     gap: 4rem;
   }
-  @include content-column;
   margin-bottom: 4rem;
+  @include content-column;
 }
 
 .card {
@@ -409,7 +467,6 @@ main {
 
 footer {
   background-color: white;
-  //  @include content-column;
   padding: 0.5rem 3rem;
   text-align: center;
   margin-top: 1rem;
