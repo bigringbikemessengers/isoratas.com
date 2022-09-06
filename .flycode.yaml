@@ -9,3 +9,5 @@ apps:
     text-resources:
       - path: "*.html"
         format: html-hardcoded
+      - path: "*.md"
+        format: html-hardcoded
