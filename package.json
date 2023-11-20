@@ -14,7 +14,7 @@
   "scripts": {
     "start": "parcel ./index.html",
     "instagram": "node instagram.js > instagram_feed.html",
-    "build": "yarn run instagram; rm -rf dist/ && parcel build --no-cache --no-source-maps ./index.html && cp -t dist/ _redirects"
+    "build": "yarn run instagram; rm -rf dist/ && parcel build --no-cache --no-source-maps ./index.html && cp -t dist/ _redirects og.jpg"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.2.3",

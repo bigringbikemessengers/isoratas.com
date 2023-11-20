@@ -1,4 +1,4 @@
-import { readFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, existsSync, mkdirSync, copyFileSync } from 'fs';
 import { format as formatPath } from 'path';
 
 import posthtml from 'posthtml';
@@ -46,6 +46,10 @@ const feed = await Promise.all(
 
 const template = readFileSync('instagram_feed.template.html')
 
-posthtml(expressions({ locals: { feed } }))
+await posthtml(expressions({ locals: { feed } }))
   .process(template)
   .then(result => console.log(result.html))
+
+if (feed.length > 0) {
+  copyFileSync(feed[0].media_path_large, './og.jpg');
+}
