@@ -9,7 +9,7 @@ Pyörämme liikkuvat täysin päästöttömästi eivätkä aiheuta meluhaittaa t
 ### *Olemme paikallisten lähettien omistama yritys joka on sitoutunut harjoittamaan kokonaisvaltaisen vastuullista liiketoimintaa.*
 Harjoitamme oikeudenmukaista paikallista liiketoimintaa. Meillä työn tuotto jakautuu tasavertaisesti kaikille työn tekijöille, minkä johdosta meillä ajavatkin motivoituneet, ammattimaiset ja työstään ylpeät lähetit.
 
-### *Pyörälähetti on nopein keino saada lähetys perille kantakaupungin alueella - tämä korostuu etenkin ruuhka-aikaan.*
+### *Fillarilähetti on nopein keino saada lähetys perille kantakaupungin alueella - tämä korostuu etenkin ruuhka-aikaan.*
 Yhdistämällä pyöräilyn ja julkisen liikenteen pystymme tehokkaasti ja nopeasti ulottamaan toiminta-alueemme kauemmaksikin. EXPRESS-kuljetuksemme kulkevat perille jopa kymmenessä minuutissa tilauksesta.
 
 ### *Ammattimaisen pyörälähetin toimintavarmuus on omaa luokkaansa.*
