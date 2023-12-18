@@ -16,7 +16,7 @@ const instagram = new Instagram({});
 
 if (!existsSync(IMAGE_DIR)) mkdirSync(IMAGE_DIR);
 
-const userMedia = await instagram.retrieveUserMedia(TOKEN);
+const userMedia = await instagram.retrieveUserMedia(TOKEN, 100);
 const feed = await Promise.all(
   userMedia
     .data
